@@ -3,8 +3,8 @@ Contributors: Access Keys
 Tags: custom css, css, custom, style, stylesheet, custom style, styles, add style, customize theme, own style
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
-Tested up to: 4.1
-Stable tag: 1.0.2
+Tested up to: 4.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,11 @@ No, It will not affect the loading of the site in anyways.
 1. Backend.
 
 == Changelog ==
+= 1.0.3 =
+* Done the div fixing for the settings page.
+* Compactibility test for wordpress v4.2
+
+
 = 1.0.2 =
 * Code optimization for backend settings.
 

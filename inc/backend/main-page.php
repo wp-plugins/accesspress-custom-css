@@ -28,8 +28,7 @@
         </div>
         <?php
         $options = get_option( APCCSS_SETTINGS );
-        if (isset($_SESSION['apccss_message'])) {
-            ?>
+        if (isset($_SESSION['apccss_message'])) { ?>
             <div class="apccss-message">
                 <p>
                 <?php
@@ -44,26 +43,25 @@
 				    <li class="apccss-active-tab"><a href="javascript:void(0)" id="apccss-custom-css-settings" class="apccss-tabs-trigger"><?php _e('Custom CSS settings', APCCSS_TEXT_DOMAIN); ?></a></li>
 				    <li><a href="javascript:void(0)" id="apccss-about" class="apccss-tabs-trigger"><?php _e('About', APCCSS_TEXT_DOMAIN); ?></a></li>
 				</ul>
-		<div class='apccss-tab-contents apccss-active-tab' id='tab-apccss-custom-css-settings'>
-			<p class="apccss-info"><?php _e('Please write your custom css here:', APCCSS_TEXT_DOMAIN); ?> </p>
-			<input type="hidden" name="action" value="apccss_save_options" />
-			<p> <input type="submit" class="apccss-submit-css" name='apccss_save_settings' value="<?php _e( 'Save', APCCSS_TEXT_DOMAIN ); ?>"/> </p>
-			<textarea name="apccss_textarea" id="apccss_textarea" dir="ltr" style="width:100%;height:350px;"><?php if(isset($options['css'])){ echo $options['css']; } ?></textarea>
-			<script type="text/javascript">var editor = CodeMirror.fromTextArea(document.getElementById("apccss_textarea"), { lineNumbers: true });</script>
-			<input type="button" class="apccss-top-button" value="<?php _e( 'Top^', APCCSS_TEXT_DOMAIN ); ?>" />
+        		<div class='apccss-tab-contents apccss-active-tab' id='tab-apccss-custom-css-settings'>
+        			<p class="apccss-info"><?php _e('Please write your custom css here:', APCCSS_TEXT_DOMAIN); ?> </p>
+        			<input type="hidden" name="action" value="apccss_save_options" />
+        			<p> <input type="submit" class="apccss-submit-css" name='apccss_save_settings' value="<?php _e( 'Save', APCCSS_TEXT_DOMAIN ); ?>"/> </p>
+        			<textarea name="apccss_textarea" id="apccss_textarea" dir="ltr" style="width:100%;height:350px;"><?php if(isset($options['css'])){ echo $options['css']; } ?></textarea>
+        			<script type="text/javascript">var editor = CodeMirror.fromTextArea(document.getElementById("apccss_textarea"), { lineNumbers: true });</script>
+        			<input type="button" class="apccss-top-button" value="<?php _e( 'Top^', APCCSS_TEXT_DOMAIN ); ?>" />
 
-	        <div class="apccss-actions">
-	    		<input type="submit" class="apccss-bottom-submit" name='apccss_save_settings' value="<?php _e( 'Save', APCCSS_TEXT_DOMAIN ); ?>" />
-	    		<?php wp_nonce_field('apccss_nonce_save_settings', 'apccss_add_nonce_save_settings'); ?>
-	    		<?php $nonce = wp_create_nonce('apccss-restore-default-settings-nonce'); ?>
-	    		<a class="apccss-btn-wrap" href="<?php echo admin_url() . 'admin-post.php?action=apccss_restore_default_settings&_wpnonce=' . $nonce; ?>" onclick="return confirm('<?php _e('Are you sure you want to clear the editor?', APCCSS_TEXT_DOMAIN ); ?>')"><input type="button" value="<?php _e('Clear Editor',APCCSS_TEXT_DOMAIN);?>" class="apccss-reset-button"/></a>
-	        </div>
-		</div>
+        	        <div class="apccss-actions">
+        	    		<input type="submit" class="apccss-bottom-submit" name='apccss_save_settings' value="<?php _e( 'Save', APCCSS_TEXT_DOMAIN ); ?>" />
+        	    		<?php wp_nonce_field('apccss_nonce_save_settings', 'apccss_add_nonce_save_settings'); ?>
+        	    		<?php $nonce = wp_create_nonce('apccss-restore-default-settings-nonce'); ?>
+        	    		<a class="apccss-btn-wrap" href="<?php echo admin_url() . 'admin-post.php?action=apccss_restore_default_settings&_wpnonce=' . $nonce; ?>" onclick="return confirm('<?php _e('Are you sure you want to clear the editor?', APCCSS_TEXT_DOMAIN ); ?>')"><input type="button" value="<?php _e('Clear Editor',APCCSS_TEXT_DOMAIN);?>" class="apccss-reset-button"/></a>
+        	        </div>
+        		</div>
 
-        <div class='apccss-tab-contents' id='tab-apccss-about' style="display:none">
-        	<?php include('apccss-about.php'); ?>
-        </div>
-		
+                <div class='apccss-tab-contents' id='tab-apccss-about' style="display:none">
+                	<?php include('apccss-about.php'); ?>
+                </div>
 		</form>
 	</div><!-- apccss-form-wraper -->
 </div> <!--  apccss backend wrapper -->

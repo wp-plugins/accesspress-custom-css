@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 Plugin name: AccessPress Custom CSS
 Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-custom-css/
 Description: A plugin to add custom css to a site.
-Version: 1.0.2
+Version: 1.0.3
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Text Domain:apccss
@@ -14,7 +14,7 @@ License: GPLv2 or later
 
 //Decleration of the necessary constants for plugin
 if(!defined( 'APCCSS_VERSION' ) ) {
-	define( 'APCCSS_VERSION', '1.0.2' );
+	define( 'APCCSS_VERSION', '1.0.3' );
 }
 
 if( !defined( 'APCCSS_IMAGE_DIR' ) ) {
@@ -104,6 +104,7 @@ if ( !class_exists( 'APC_Css_free' ) ){
 						wp_deregister_style('codemirror');
 						wp_deregister_style('codemirror_dialog');
 						wp_deregister_style('codemirror_themes');
+						
 						// Wp Editor Script
 						wp_deregister_script('wpeditor');
 						wp_deregister_script('wp-editor-posts-jquery');
